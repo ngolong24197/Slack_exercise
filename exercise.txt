@@ -1,0 +1,42 @@
+Xây dựng một chương trình Python đơn giản để quản lý các sự kiện cá nhân.
+ Toàn bộ dữ liệu được lưu bằng file (su_kien.txt)
+:brain: Các chức năng chính:
+1. :memo: Thêm sự kiện mới
+Khi người dùng chọn thêm sự kiện, chương trình yêu cầu:
+Nhập tên sự kiện
+Nhập thời gian bắt đầu theo định dạng YYYY-MM-DD HH:MM
+Nhập thời lượng (phút)
+Chọn kiểu lặp lại: không, hàng tuần, hàng tháng
+:white_check_mark: Kiểm tra xung đột thời gian:
+Đọc từng dòng trong su_kien.txt, tính thời gian kết thúc của từng sự kiện rồi so sánh với sự kiện mới. Nếu có chồng lấn thời gian, thông báo cho người dùng và hỏi có muốn thêm tiếp không.
+:white_check_mark: Lưu dữ liệu:
+Ghi sự kiện vào file su_kien.txt với định dạng:
+Tên sự kiện | YYYY-MM-DD HH:MM | thời_lượng_phút | lặp_lại
+Ví dụ:
+Họp nhóm | 2025-04-20 09:00 | 90 | hàng tuần
+2. :page_facing_up: Xem danh sách sự kiện
+a. Xem toàn bộ sự kiện
+Đọc tất cả các dòng trong su_kien.txt, chuyển thời gian từ chuỗi sang datetime. Nếu là sự kiện có lặp lại (hàng tuần, hàng tháng), tự động tính và hiển thị các lần lặp tiếp theo trong vòng 30 ngày tới.
+Sắp xếp danh sách theo thời gian bắt đầu.
+Hiển thị kết quả dạng:
+1. Họp nhóm - Ngày 20/04/2025, Giờ 09:00 - 90 phút - hàng tuần
+2. Gặp khách - Ngày 22/04/2025, Giờ 14:30 - 60 phút - không
+...
+b. Bộ lọc nâng cao
+Cho phép người dùng chọn xem:
+:white_check_mark: Tất cả sự kiện
+:white_check_mark: Sự kiện trong tuần hiện tại
+:white_check_mark: Sự kiện trong tháng hiện tại
+3. :hourglass_flowing_sand: Tính thời gian còn lại đến một sự kiện
+Hiển thị danh sách các sự kiện đánh số
+Yêu cầu người dùng chọn số thứ tự
+Dùng datetime.now() để tính thời gian còn lại đến thời gian bắt đầu của sự kiện đó
+Hiển thị kết quả:
+Còn lại 2 ngày, 3 giờ, 15 phút
+4. :wastebasket: Xoá sự kiện
+Hiển thị danh sách sự kiện có đánh số
+Cho người dùng chọn số thứ tự muốn xoá
+Ghi lại file mới (bỏ qua dòng đó)
+:package: File code chia làm 2 phần:
+schedule_manager.py: Chứa các hàm logic.
+main.py: Điều khiển luồng chương trình.
