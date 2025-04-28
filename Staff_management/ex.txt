@@ -1,0 +1,37 @@
+Viết một chương trình Python để quản lý thông tin nhân viên trong công ty, bao gồm:
+Nhân viên bình thường (NhanVien)
+Quản lý (QuanLy)
+Lưu thông tin vào danh sách
+Cho phép tìm kiếm, thêm mới, hiển thị, tính lương
+:bricks: Yêu cầu cấu trúc:
+1. Lớp NhanVien (lớp cha):
+Thuộc tính riêng (private):
+__ma_nv: Mã nhân viên
+__ten: Họ tên
+__luong_co_ban: Lương cơ bản
+Phương thức:
+__init__()
+__str__() để hiển thị thông tin
+tinh_luong() (trả về lương cơ bản)
+getter/setter cho ma_nv, ten, luong_co_ban
+2. Lớp QuanLy (kế thừa NhanVien):
+Thêm thuộc tính:
+__he_so_chuc_vu: Hệ số chức vụ (float)
+Ghi đè phương thức:
+tinh_luong(): Tính lương theo công thức: luong = luong_co_ban * he_so_chuc_vu
+__str__() ghi đè để hiển thị thêm vai trò quản lý
+3. Lớp CongTy:
+Thuộc tính:
+danh_sach_nv: Danh sách tất cả nhân viên (bao gồm cả quản lý)
+Phương thức:
+them_nhan_vien(nv)
+hien_thi_nhan_vien()
+tim_theo_ma(ma_nv)
+tinh_tong_quy_luong()
+:clipboard: 4. Menu chính trong main():
+Thêm nhân viên thường
+Thêm quản lý
+Hiển thị tất cả nhân viên
+Tìm nhân viên theo mã
+Tính tổng quỹ lương công ty
+Thoát
